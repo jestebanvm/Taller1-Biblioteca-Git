@@ -11,6 +11,7 @@ public class main {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         createClient();
+        listClients();
     }
     //crear cliente
     public static void createClient(){
@@ -32,5 +33,22 @@ public class main {
         clients.add(client);
 
         System.out.println("Client created successfully.");
+    }
+    public static void listClients() {
+
+        if (clients.isEmpty()) {
+        System.out.println("There are no registered customers.");
+        return;
+        }
+
+        System.out.println("\n*** customer list ***");
+
+        for (Client client : clients) {
+            System.out.println("ID: " + client.getId());
+            System.out.println("Name: " + client.getName());
+            System.out.println("Phone: " + client.getPhone());
+            System.out.println("Email: " + client.getEmail());
+            System.out.println("-------------------------");
+        }
     }
 }
