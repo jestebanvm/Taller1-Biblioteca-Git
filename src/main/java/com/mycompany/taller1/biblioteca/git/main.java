@@ -13,6 +13,7 @@ public class main {
         createClient();
         listClients();
         findClient();
+        updateClient();
     }
     //crear cliente
     public static void createClient(){
@@ -72,6 +73,36 @@ public class main {
 
         System.out.println("No se encontro un cliente con ese ID.");
     }
+    public static void updateClient() {
 
+        System.out.print("Enter the ID of the customer you wish to update: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        for (Client client : clients) {
+
+            if (client.getId() == id) {
+
+                System.out.print("Enter the new name: ");
+                String nombre = sc.nextLine();
+
+                System.out.print("Enter the new phone: ");
+                String telefono = sc.nextLine();
+
+                System.out.print("Enter the new email: ");
+                String email = sc.nextLine();
+
+                client.setName(nombre);
+                client.setPhone(telefono);
+                client.setEmail(email);
+
+                System.out.println("Client updated successfully.");
+
+                return;
+            }
+        }
+
+        System.out.println("No client was found with that ID.");
+    }
 }
 
