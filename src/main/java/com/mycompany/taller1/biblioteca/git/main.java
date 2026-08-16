@@ -12,6 +12,7 @@ public class main {
     public static void main(String[] args) {
         createClient();
         listClients();
+        findClient();
     }
     //crear cliente
     public static void createClient(){
@@ -34,6 +35,7 @@ public class main {
 
         System.out.println("Client created successfully.");
     }
+    //lista de clientes
     public static void listClients() {
 
         if (clients.isEmpty()) {
@@ -51,4 +53,25 @@ public class main {
             System.out.println("-------------------------");
         }
     }
+    public static void findClient() {
+
+        System.out.print("Enter the ID of the customer you wish to search for: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        for (Client client : clients) {
+            if (client.getId() == id) {
+                System.out.println("\n*** customer found ***");
+                System.out.println("ID: " + client.getId());
+                System.out.println("Name: " + client.getName());
+                System.out.println("phone: " + client.getPhone());
+                System.out.println("Email: " + client.getEmail());
+
+                return;
+            }
+        }
+
+        System.out.println("No se encontro un cliente con ese ID.");
+    }
+
 }
+
