@@ -104,5 +104,25 @@ public class main {
 
         System.out.println("No client was found with that ID.");
     }
+    public static void deleteClient() {
+
+        System.out.print("Enter the ID of the client you want to delete: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        for (int i = 0; i < clients.size(); i++) {
+
+            if (clients.get(i).getId() == id) {
+
+                clients.remove(i);
+
+                System.out.println("Client deleted successfully.");
+
+                return;
+            }
+        }
+
+        System.out.println("No client was found with that ID.");
+    }
 }
 
