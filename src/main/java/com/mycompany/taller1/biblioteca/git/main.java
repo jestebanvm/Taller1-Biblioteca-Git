@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
-    static ArrayList<Client> clients = new ArrayList<>(); 
+    static ArrayList<Client> clients = new ArrayList<>();
+    static ArrayList<Book> books = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         createClient();
@@ -123,6 +124,29 @@ public class main {
         }
 
         System.out.println("No client was found with that ID.");
+    }
+    //crear libro
+    public static void createBook() {
+
+        System.out.println("\n*** create book ***");
+
+        System.out.print("code: ");
+        String code = sc.nextLine();
+
+        System.out.print("title: ");
+        String title = sc.nextLine();
+
+        System.out.print("year of publication: ");
+        String yearpublication = sc.nextLine();
+
+        System.out.print("Author: ");
+        String author = sc.nextLine();
+
+        Book book = new Book(code, title, yearpublication, author);
+
+        books.add(book);
+
+        System.out.println("Libro creado correctamente.");
     }
 }
 
