@@ -173,7 +173,7 @@ public class main {
     }
     public static void updateBook() {
 
-        System.out.println("\n--- UPDATE BOOK ---");
+        System.out.println("\n*** update book ***");
 
         System.out.print("Enter the book code: ");
         String code = sc.nextLine();
