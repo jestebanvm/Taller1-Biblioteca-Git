@@ -161,5 +161,15 @@ public class main {
             System.out.println(book);
         }
     }
+    public static Book buscarBook(String code) {
+
+        for (Book book : books) {
+
+            if (book.getCode().equals(code)) {
+                return book;
+            }    
+        }
+        return null;
+    }
 }
 
