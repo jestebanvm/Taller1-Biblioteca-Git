@@ -200,5 +200,23 @@ public class main {
 
         System.out.println("Book updated successfully.");
     }
+    public static void deleteBook() {
+
+        System.out.println("\n*** delete book ***");
+
+        System.out.print("Enter the book code: ");
+        String code = sc.nextLine();
+
+        Book book = buscarBook(code);
+
+        if (book == null) {
+            System.out.println("book not found");
+            return;
+        }
+
+        books.remove(book);
+
+        System.out.println("Book successfully deleted.");
+    }
 }
 
