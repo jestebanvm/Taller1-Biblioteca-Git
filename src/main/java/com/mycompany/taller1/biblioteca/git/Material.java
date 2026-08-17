@@ -4,7 +4,7 @@ public class Material {
     private String code;
     private String title;
     private String yearpublication;
-    public Material(String code,String title,String aniopublic){
+    public Material(String code,String title,String yearpublication){
         this.code=code;
         this.title=title;
         this.yearpublication=yearpublication;
