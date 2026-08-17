@@ -3,7 +3,7 @@ package com.mycompany.taller1.biblioteca.git;
 public class Book extends Material{
     private String author;
     private boolean available;
-    public Book(String code,String title,String yearpublication, String autor){
+    public Book(String code,String title,String yearpublication, String author){
         super(code,title,yearpublication);
         this.author=author;
         this.available=true;
