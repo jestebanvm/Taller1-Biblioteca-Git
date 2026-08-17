@@ -171,5 +171,34 @@ public class main {
         }
         return null;
     }
+    public static void updateBook() {
+
+        System.out.println("\n--- UPDATE BOOK ---");
+
+        System.out.print("Enter the book code: ");
+        String code = sc.nextLine();
+
+        Book book = buscarBook(code);
+
+        if (book == null) {
+            System.out.println("Book not found.");
+            return;
+        }
+
+        System.out.print("New title: ");
+        String newTitle = sc.nextLine();
+
+        System.out.print("New publication year: ");
+        String newYear = sc.nextLine();
+
+        System.out.print("New author: ");
+        String newAuthor = sc.nextLine();
+
+        book.setTitle(newTitle);
+        book.setYearpublication(newYear);
+        book.setAuthor(newAuthor);
+
+        System.out.println("Book updated successfully.");
+    }
 }
 
