@@ -146,7 +146,20 @@ public class main {
 
         books.add(book);
 
-        System.out.println("Libro creado correctamente.");
+        System.out.println("book created correctly");
+    }
+    public static void listbooks() {
+
+        System.out.println("\n*** list of books ***");
+
+        if (books.isEmpty()) {
+            System.out.println("There are no registered books.");
+            return;
+        }
+
+        for (Book book : books) {
+            System.out.println(book);
+        }
     }
 }
 
