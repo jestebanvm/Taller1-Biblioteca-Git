@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class main {
     static ArrayList<Client> clients = new ArrayList<>();
     static ArrayList<Book> books = new ArrayList<>();
+    static ArrayList<loan> Loans = new ArrayList<>(); 
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         createClient();
@@ -218,5 +219,52 @@ public class main {
 
         System.out.println("Book successfully deleted.");
     }
+    //prestamos
+    public static void createLoan() {
+
+        System.out.println("\n*** REGISTER LOAN ***");
+
+        System.out.print("Enter the client ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        Client client = null;
+
+        for (Client c : clients) {
+            if (c.getId() == id) {
+                client = c;
+                break;
+            }
+        }
+
+        if (client == null) {
+            System.out.println("client not found.");
+            return;
+        }
+
+        System.out.print("enter the book code: ");
+        String code = sc.nextLine();
+
+        Book book = buscarBook(code);
+
+        if (book == null) {
+            System.out.println("book not found.");
+            return;
+        }
+
+        if (!book.isavailable()) {
+            System.out.println("book is not available.");
+            return;
+        }
+
+        loan Loan = new loan(client, book);
+
+        Loans.add(Loan);
+
+        book.setavailable(false);
+
+        System.out.println("Loan registered successfully.");
+    }
+    
 }
 
