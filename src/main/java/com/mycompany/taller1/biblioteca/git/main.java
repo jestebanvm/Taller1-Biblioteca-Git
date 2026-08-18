@@ -1,6 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 
 package com.mycompany.taller1.biblioteca.git;
 import java.util.ArrayList;
@@ -12,10 +9,98 @@ public class main {
     static ArrayList<loan> Loans = new ArrayList<>(); 
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        createClient();
-        listClients();
-        findClient();
-        updateClient();
+
+        int opcion;
+
+        do {
+            System.out.println("\n==============================");
+            System.out.println("***Library system***");
+            System.out.println("==============================");
+            System.out.println("1. Create client");
+            System.out.println("2. List clients");
+            System.out.println("3. Find client");
+            System.out.println("4. Update client");
+            System.out.println("5. Delete client");
+            System.out.println("------------------------------");
+            System.out.println("6. Create book");
+            System.out.println("7. List books");
+            System.out.println("8. Find books");
+            System.out.println("9. Update book");
+            System.out.println("10. Delete book");
+            System.out.println("------------------------------");
+            System.out.println("11. Register loan");
+            System.out.println("12. Register return");
+            System.out.println("13. List active loans");
+            System.out.println("0. Exit");
+            System.out.println("==============================");
+            System.out.print("select an option: ");
+
+            opcion = sc.nextInt();
+            sc.nextLine();
+
+            switch (opcion) {
+
+                case 1:
+                    createClient();
+                    break;
+
+                case 2:
+                    listClients();
+                    break;
+
+                case 3:
+                    findClient();
+                    break;
+
+                case 4:
+                    updateClient();
+                    break;
+
+                case 5:
+                    deleteClient();
+                    break;
+
+                case 6:
+                    createBook();
+                    break;
+
+                case 7:
+                    listbooks();
+                    break;
+                case 8:
+                    findBook();
+                    break;
+
+                case 9:
+                    updateBook();
+                    break;
+
+                case 10:
+                    deleteBook();
+                    break;
+
+                case 11:
+                    createLoan();
+                    break;
+
+                case 12:
+                    returnLoan();
+                    break;
+
+                case 13:
+                    listLoans();
+                    break;
+
+                case 0:
+                    System.out.println("Saliendo del sistema...");
+                    break;
+
+                default:
+                    System.out.println("Opción no válida.");
+            }
+
+        } while (opcion != 0);
+
     }
     //crear cliente
     public static void createClient(){
@@ -162,7 +247,7 @@ public class main {
             System.out.println(book);
         }
     }
-    public static Book buscarBook(String code) {
+    public static Book findBook(String code) {
 
         for (Book book : books) {
 
@@ -172,6 +257,27 @@ public class main {
         }
         return null;
     }
+    public static void findBook() {
+
+        System.out.println("\n*** SEARCH BOOK ***");
+
+        System.out.print("Enter the book code: ");
+        String code = sc.nextLine();
+
+        Book book = findBook(code);
+
+        if (book == null) {
+            System.out.println("Book not found.");
+            return;
+        }
+
+        System.out.println("\n*** BOOK FOUND ***");
+        System.out.println("Code: " + book.getCode());
+        System.out.println("Title: " + book.getTitle());
+        System.out.println("Publication year: " + book.getyearPublication());
+        System.out.println("Author: " + book.getAuthor());
+        System.out.println("Available: " + book.isavailable());
+    }
     public static void updateBook() {
 
         System.out.println("\n*** update book ***");
@@ -179,7 +285,7 @@ public class main {
         System.out.print("Enter the book code: ");
         String code = sc.nextLine();
 
-        Book book = buscarBook(code);
+        Book book = findBook(code);
 
         if (book == null) {
             System.out.println("Book not found.");
@@ -208,7 +314,7 @@ public class main {
         System.out.print("Enter the book code: ");
         String code = sc.nextLine();
 
-        Book book = buscarBook(code);
+        Book book = findBook(code);
 
         if (book == null) {
             System.out.println("book not found");
@@ -245,7 +351,7 @@ public class main {
         System.out.print("enter the book code: ");
         String code = sc.nextLine();
 
-        Book book = buscarBook(code);
+        Book book = findBook(code);
 
         if (book == null) {
             System.out.println("book not found.");
