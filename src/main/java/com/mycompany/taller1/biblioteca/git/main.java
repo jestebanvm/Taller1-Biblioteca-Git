@@ -285,5 +285,28 @@ public class main {
         }
         System.out.println("no active loan found for that book.");
     }
+    public static void listLoans() {
+
+        System.out.println("\n*** ACTIVE LOANS ***");
+
+        boolean found = false;
+
+        for (loan Loan: Loans) {
+
+            if (Loan.isActive()) {
+
+                System.out.println("Client: "+ Loan.getClient().getName());
+                System.out.println("Book: "+ Loan.getBook().getTitle());
+                System.out.println("Book code: "+ Loan.getBook().getCode());
+                System.out.println("-------------------------");
+
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No active loans found.");
+        }
+    }
+    
 }
 
