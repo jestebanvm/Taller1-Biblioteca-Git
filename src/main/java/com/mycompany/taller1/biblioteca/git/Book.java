@@ -23,4 +23,14 @@ public class Book extends Material{
     public void setavailable(boolean available) {
         this.available = available;
     }
+    @Override
+    public String toString() {
+    return "Book{" +
+            "code='" + getCode() + '\'' +
+            ", title='" + getTitle() + '\'' +
+            ", yearpublication='" + getyearPublication() + '\'' +
+            ", author='" + author + '\'' +
+            ", available=" + available +
+            '}';
+}
 }
