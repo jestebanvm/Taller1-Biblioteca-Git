@@ -265,6 +265,25 @@ public class main {
 
         System.out.println("Loan registered successfully.");
     }
-    
+    public static void returnLoan() {
+
+        System.out.println("\n*** RETURN LOAN ***");
+
+        System.out.print("enter the book code: ");
+        String code = sc.nextLine();
+
+        for (loan Loan : Loans) {
+
+            if (Loan.getBook().getCode().equals(code)&& Loan.isActive()) {
+
+                Loan.setActive(false);
+                Loan.getBook().setavailable(true);
+
+                System.out.println("book returned successfully.");
+                return;
+            }
+        }
+        System.out.println("no active loan found for that book.");
+    }
 }
 
