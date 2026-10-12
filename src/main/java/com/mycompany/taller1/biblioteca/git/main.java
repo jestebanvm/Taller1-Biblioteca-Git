@@ -16,7 +16,7 @@ public class main {
             System.out.println("\n==============================");
             System.out.println("***Library system***");
             System.out.println("==============================");
-            System.out.println("1. Create client");
+            System.out.println("1. Create clients");
             System.out.println("2. List clients");
             System.out.println("3. Find client");
             System.out.println("4. Update client");
